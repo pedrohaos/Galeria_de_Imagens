@@ -1,0 +1,67 @@
+body{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(45deg, #85FFBD,#FFFB7D);
+}
+
+.main{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .4s;
+}
+
+.main label{
+    cursor: pointer;
+    margin: auto;
+    position: absolute;
+    width: 250px;
+    height: 320px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 5px solid #FFFFFF;
+    box-shadow: 0 0 5px rgba(0, 0, 0, .1);
+    transition: .6s;
+}
+
+.main label img{
+    width: 100%;
+    height: 100%;
+    filter: grayscale(1);
+}
+
+.main label:nth-child(1){
+    transform: rotate(5deg);
+}
+
+.main label:nth-child(2){
+    transform: rotate(15deg);
+}
+
+.main label:nth-child(3){
+    transform: rotate(25deg);
+}
+
+input{
+    display: none;
+}
+
+input:checked ~ .main label:nth-child(1){
+    transform: translateX(-300px);
+}
+
+input:checked ~ .main label:nth-child(2){
+    transform: translateX(0px);
+}
+
+input:checked ~ .main label:nth-child(3){
+    transform: translateX(300px);
+}
+
+input:checked ~ .main label:hover img{
+    filter: grayscale(0);
+    transform: scale(1.06);
+}
